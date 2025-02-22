@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   const allowedDomain = "delayzealudik.github.io";
 
-  if (window.location.hostname !== allowedDomain) {
+  if (window.location.hostname !== allowedDomain && !window.location.pathname.startsWith("/webAppNew")) {
+      // Блокировка происходит только если не на нужном домене и не в нужном подкаталоге
       document.body.innerHTML = "";
   
       function createFlashingBackground() {
